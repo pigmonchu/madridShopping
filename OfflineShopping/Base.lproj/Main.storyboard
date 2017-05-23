@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PLn-3B-ObT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Medium.ttf">
+            <string>MontserratAlternates-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--First Exec View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstExecViewController" customModule="OfflineShopping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +27,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconoBlanco" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-my-SO3">
+                                <rect key="frame" x="35" y="94" width="411" height="500.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Madrid Shopping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuL-Ki-kzN">
+                                <rect key="frame" x="60" y="601.5" width="256" height="36.5"/>
+                                <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="28"/>
+                                <color key="textColor" red="0.948936522" green="0.94907277820000002" blue="0.94890671969999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="0.47926476880000002" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-hj-83M">
+                                <rect key="frame" x="138" y="551.5" width="99" height="33"/>
+                                <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="17"/>
+                                <color key="tintColor" red="0.948936522" green="0.94907277820000002" blue="0.94890671969999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="ver Tiendas">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-x7-dop">
+                                <rect key="frame" x="169" y="514" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbR-cI-pnA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qjp-dI-OXi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.36427119006849318" colorSpace="calibratedRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadError" translatesAutoresizingMaskIntoConstraints="NO" id="flJ-Nf-GsU">
+                                <rect key="frame" x="0.0" y="104" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="flJ-Nf-GsU" secondAttribute="height" multiplier="1:1" id="1HR-7Q-QT9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7544090747833252" green="0.22095301747322083" blue="0.17176088690757751" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SuL-Ki-kzN" secondAttribute="bottom" constant="29" id="5Dj-ce-KzI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MbR-cI-pnA" secondAttribute="bottom" id="8Ep-8i-03N"/>
+                            <constraint firstItem="1ae-my-SO3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="3:4" id="8jS-Tn-wan"/>
+                            <constraint firstAttribute="trailing" secondItem="1ae-my-SO3" secondAttribute="trailing" constant="-71" id="9Re-1C-TOr"/>
+                            <constraint firstItem="flJ-Nf-GsU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="CaU-NV-xkA"/>
+                            <constraint firstAttribute="trailing" secondItem="flJ-Nf-GsU" secondAttribute="trailing" id="Hmh-ab-xnR"/>
+                            <constraint firstItem="1ae-my-SO3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="94" id="P4h-Ip-Fef"/>
+                            <constraint firstItem="5ri-x7-dop" firstAttribute="top" secondItem="flJ-Nf-GsU" secondAttribute="bottom" constant="35" id="S3f-rq-0kQ"/>
+                            <constraint firstItem="1ae-my-SO3" firstAttribute="width" secondItem="1ae-my-SO3" secondAttribute="height" multiplier="292:355" id="UX5-vi-Ixx"/>
+                            <constraint firstItem="SuL-Ki-kzN" firstAttribute="top" secondItem="VsH-hj-83M" secondAttribute="bottom" constant="17" id="W9Z-Gj-x4T"/>
+                            <constraint firstItem="flJ-Nf-GsU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XPb-wC-7JY"/>
+                            <constraint firstItem="5ri-x7-dop" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bSE-hJ-FCj"/>
+                            <constraint firstItem="MbR-cI-pnA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f0n-oe-oYY"/>
+                            <constraint firstItem="SuL-Ki-kzN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j5N-di-2Ai"/>
+                            <constraint firstAttribute="trailing" secondItem="MbR-cI-pnA" secondAttribute="trailing" id="p4s-TH-9Vd"/>
+                            <constraint firstItem="VsH-hj-83M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rLj-Wm-tuY"/>
+                            <constraint firstItem="MbR-cI-pnA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x6y-3q-eli"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rCW-VT-iMz"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="5ri-x7-dop" id="tXu-C8-Fmi"/>
+                        <outlet property="backgroundError" destination="MbR-cI-pnA" id="83P-dD-yBN"/>
+                        <outlet property="btnWatchShops" destination="VsH-hj-83M" id="xs4-WO-6pL"/>
+                        <outlet property="imgIconoApp" destination="1ae-my-SO3" id="5zc-MR-cpk"/>
+                        <outlet property="imgLoadError" destination="flJ-Nf-GsU" id="AwK-ax-dOt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="964" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PPv-Lb-Fr8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLn-3B-ObT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zcg-W5-l6t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LsS-t7-qR0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdm-Jr-bEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconoBlanco" width="292" height="355"/>
+        <image name="loadError" width="375" height="400"/>
+    </resources>
 </document>
