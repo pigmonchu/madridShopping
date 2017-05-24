@@ -9,7 +9,7 @@ public class ShopsAPIManager{
     typealias JSONDictionary    = [String : JSONObject]
     typealias JSONArray         = [JSONDictionary]
 
-    func getAllShops() throws -> Void {
+    func getAllShops(completion: @escaping ([Shop.data]) throws ->  Void) throws -> Void {
         let dataJson: Data?
         var contextJson : JSONArray = []
         var shops:[Shop.data] = []
@@ -30,6 +30,7 @@ public class ShopsAPIManager{
             shops.append(shop)
         }
         
+        try completion(shops)
     }
     
     func loadFromRemote() -> Data? {
@@ -40,19 +41,15 @@ public class ShopsAPIManager{
     }
     
     func parse(data: Data) throws -> JSONArray {
-        
         guard let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any] else {
             print("local file json format error")
             throw OfflineShoppingErrors.jsonParsingError
         }
         
-        
         return dict["result"] as! JSONArray
-        
     }
     
     func decode(Shop json: JSONDictionary) -> Shop.data? {
-        
         do {
             let address = try decodeString(field: "address", Shop: json)
             let description_en = try decodeString(field: "description_en", Shop: json)
@@ -60,8 +57,8 @@ public class ShopsAPIManager{
             let gps_lat = try decodeDouble(field: "gps_lat",Shop: json)
             let gps_lon = try decodeDouble(field: "gps_lon",Shop: json)
             let id = try decodeInt(field: "id",Shop: json)
-            //            let img = try decodeImg(field: "img",Shop: json)
-            //            let logo_img = try decodeImg(field: "logo_img",Shop: json)
+            let img_url = try decodeString(field: "img",Shop: json)
+            let logo_img_url = try decodeString(field: "logo_img",Shop: json)
             let name = try decodeString(field: "name",Shop: json)
             let opening_hours_en = try decodeString(field: "opening_hours_en",Shop: json)
             let opening_hours_es = try decodeString(field: "opening_hours_es",Shop: json)
@@ -74,6 +71,8 @@ public class ShopsAPIManager{
                              description_en: description_en,
                              gps_lat: gps_lat,
                              gps_lon: gps_lon,
+                             img_url: img_url,
+                             logo_img_url: logo_img_url,
                              name: name,
                              opening_hours_es: opening_hours_es,
                              opening_hours_en: opening_hours_en,

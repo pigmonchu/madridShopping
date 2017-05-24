@@ -31,7 +31,8 @@ class FirstExecViewController: UIViewController {
     func downloadShopsIfNeeded() {
         do {
             showDownloadMessage()
-            try ShopsInteractor(context: self.context!).downloadData {
+            
+            try ShopsInteractor().downloadData {
                 self.activityIndicator.stopAnimating()
                 self.btnWatchShops.isHidden = false
                 self.dismiss(animated: true, completion: nil)
@@ -49,12 +50,12 @@ class FirstExecViewController: UIViewController {
 
     //MARK: - Mensajes y fondos
     func showDownloadMessage () {
+        self.present(pushAlertLoading(), animated: true, completion: nil)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
         btnWatchShops.isHidden = true
         self.imgLoadError.isHidden = true
         self.backgroundError.isHidden = true
-        self.present(pushAlertLoading(), animated: true, completion: nil)
     }
 
     func showErrorLoading() {

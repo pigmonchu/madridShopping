@@ -11,14 +11,21 @@
         <attribute name="gps_lon" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="img" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="img_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="logo_img" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="logo_img_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="opening_hours_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="opening_hours_es" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Shop" positionX="-3645" positionY="-18" width="128" height="225"/>
         <element name="Cache" positionX="-3393" positionY="81" width="128" height="58"/>
+        <element name="Shop" positionX="-3645" positionY="-18" width="128" height="255"/>
     </elements>
 </model>

@@ -3,24 +3,24 @@ import CoreData
 
 public class ShopsInteractor {
 
-    internal var context: NSManagedObjectContext?
-    
-    let manager: ShopsAPIManager
+    let coreDataManager: CoreDataManager
 
-    public init(context: NSManagedObjectContext) {
-        self.context = context
-        self.manager = ShopsAPIManager()
+    public init() {
+        self.coreDataManager = CoreDataManager(dbName: "OfflineShopping")
     }
     
     public func downloadData(completion: @escaping () -> Void) throws -> Void {
         
-        if try thereIsDataInLocal(context: context!) {
+        if try coreDataManager.thereIsDataInLocal() {
+            completion()
             return
         }
         
-        try ShopsAPIManager().getAllShops()
-        
-        completion()
+        try ShopsAPIManager().getAllShops(completion: { (shops) in
+            try self.coreDataManager.save(shops: shops)
+            completion()
+        })
+
     }
 
 }
