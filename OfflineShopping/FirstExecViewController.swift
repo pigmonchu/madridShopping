@@ -29,19 +29,17 @@ class FirstExecViewController: UIViewController {
 
     //MARK: - Flujo
     func downloadShopsIfNeeded() {
-        do {
-            showDownloadMessage()
+        showDownloadMessage()
+        
+        ShopsInteractor().downloadData(completion: {
+            assert(Thread.current == Thread.main)
+            self.activityIndicator.stopAnimating()
+            self.btnWatchShops.isHidden = false
+            self.dismiss(animated: true, completion: nil)
+        }, onError: { (error) in
+            self.showErrorLoading()
             
-            try ShopsInteractor().downloadData {
-                self.activityIndicator.stopAnimating()
-                self.btnWatchShops.isHidden = false
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        catch {
-            showErrorLoading()
-            return
-        }
+        })
     }
 
     @IBAction func verTiendas(_ sender: Any) {

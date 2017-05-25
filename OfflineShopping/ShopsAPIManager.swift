@@ -35,6 +35,8 @@ public class ShopsAPIManager{
     
     func loadFromRemote() -> Data? {
         let jsonData = try? Data(contentsOf: URL(string: urlApi)!)
+        
+        Thread.sleep(forTimeInterval: 5)
         print("Remote loading of Madrid Shops")
         return jsonData
         
