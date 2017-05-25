@@ -34,21 +34,25 @@ public class ShopsAPIManager{
     }
     
     func loadFromRemote() -> Data? {
-        let jsonData = try? Data(contentsOf: URL(string: urlApi)!)
-        
-        Thread.sleep(forTimeInterval: 5)
-        print("Remote loading of Madrid Shops")
-        return jsonData
-        
+        do {
+            let jsonData = try Data(contentsOf: URL(string: urlApi)!)
+            print("Remote loading of Madrid Shops")
+            return jsonData
+        } catch {
+            print(mensaje: "Error en acceso a datos en remoto", atError: error)
+            return nil
+        }
     }
     
     func parse(data: Data) throws -> JSONArray {
-        guard let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any] else {
-            print("local file json format error")
+        do {
+            let dict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
+            return dict["result"] as! JSONArray
+        } catch {
+            print(mensaje: "local file json format error", atError: error)
             throw OfflineShoppingErrors.jsonParsingError
         }
         
-        return dict["result"] as! JSONArray
     }
     
     func decode(Shop json: JSONDictionary) -> Shop.data? {

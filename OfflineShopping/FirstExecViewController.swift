@@ -11,7 +11,7 @@ class FirstExecViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    var context: NSManagedObjectContext?
+    var msg = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class FirstExecViewController: UIViewController {
             self.btnWatchShops.isHidden = false
             self.dismiss(animated: true, completion: nil)
         }, onError: { (error) in
-            self.showErrorLoading()
+            self.showErrorLoading(error)
             
         })
     }
@@ -56,11 +56,20 @@ class FirstExecViewController: UIViewController {
         self.backgroundError.isHidden = true
     }
 
-    func showErrorLoading() {
+    func showErrorLoading(_ error: Error) {
+        
+        let myError = error as? OfflineShoppingErrors
+        
+        if myError != nil && myError == OfflineShoppingErrors.remoteShopsUrlNotReachable {
+            self.msg = "La conexión a internet es necesaria para lanzar por primera vez esta aplicación. Reintente cuando disponga de acceso a la red"
+        } else {
+            self.msg = "Se ha producido un error en la descarga de datos. Reintente más tarde"
+        }
+        
         self.dismiss(animated: true) {
             self.backgroundError.isHidden = false
             self.imgLoadError.isHidden = false
-            self.present(self.pushAlertError(), animated: true, completion: nil)
+            self.present(self.pushAlertError(message: self.msg), animated: true, completion: nil)
         }
     }
     
@@ -69,14 +78,22 @@ class FirstExecViewController: UIViewController {
         return alertSheet
     }
     
-    internal func pushAlertError() -> UIAlertController {
-        let actionSheet = UIAlertController(title: "Error en la descarga", message: "La conexión a internet es necesaria para lanzar por primera vez esta aplicación", preferredStyle: .actionSheet)
+    internal func pushAlertError(message: String) -> UIAlertController {
+        let actionSheet = UIAlertController(title: "Error en la descarga", message: message, preferredStyle: .actionSheet)
         
-        let retryBtn = UIAlertAction(title: NSLocalizedString("Reintentar", comment: ""), style: .default) { (action) in
+        let retryBtn = UIAlertAction(title: "Reintentar", style: .default) { (action) in
             self.downloadShopsIfNeeded()
         }
         
+
+        // Habilitar un botón de cierre de la app... a apple no le gusta
+        // let cancelBtn = UIAlertAction(title: "Salir", style: .cancel) { (action) in
+        //     abort()
+        // }
+        
         actionSheet.addAction(retryBtn)
+
+        // actionSheet.addAction(cancelBtn)
         
         return actionSheet
     }

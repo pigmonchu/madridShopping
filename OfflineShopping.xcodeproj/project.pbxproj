@@ -21,6 +21,7 @@
 		46E57A2C1ED4AD46005B24F1 /* ShopsAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A2B1ED4AD46005B24F1 /* ShopsAPIManager.swift */; };
 		46E57A311ED4BE97005B24F1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A301ED4BE97005B24F1 /* Errors.swift */; };
 		46E57A331ED4D23F005B24F1 /* Shop+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A321ED4D23F005B24F1 /* Shop+Utils.swift */; };
+		46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		46E57A2B1ED4AD46005B24F1 /* ShopsAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsAPIManager.swift; sourceTree = "<group>"; };
 		46E57A301ED4BE97005B24F1 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		46E57A321ED4D23F005B24F1 /* Shop+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shop+Utils.swift"; sourceTree = "<group>"; };
+		46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				4619F6231ED2A59E000C9185 /* CoreDataManager.swift */,
 				46E57A2B1ED4AD46005B24F1 /* ShopsAPIManager.swift */,
+				46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */,
 				46E57A2C1ED4AD46005B24F1 /* ShopsAPIManager.swift in Sources */,
 				46E57A331ED4D23F005B24F1 /* Shop+Utils.swift in Sources */,
 				46E57A2A1ED4AC92005B24F1 /* ShopsInteractor.swift in Sources */,

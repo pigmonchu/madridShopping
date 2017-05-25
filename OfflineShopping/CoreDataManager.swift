@@ -77,8 +77,7 @@ public class CoreDataManager {
             do {
                 try context.save()
             } catch {
-                let nserror = error as NSError
-                print("Persistency layer error \(nserror), \(nserror.userInfo)")
+                print(mensaje:"Persistency layer error", atError: error)
                 throw OfflineShoppingErrors.localDataAccessError
             }
         }
