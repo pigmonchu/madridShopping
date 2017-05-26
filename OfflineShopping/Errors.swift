@@ -7,7 +7,8 @@ enum OfflineShoppingErrors : Int, Error {
     case requiredField = 3
     case localDataAccessError = 4
     case initCoreDataError = 5
-    
+    case wrongURLFormatForJSONResource = 6
+    case urlImgNotReachable = 7
     
     var localizedDescription: String {
         switch self {
@@ -22,6 +23,10 @@ enum OfflineShoppingErrors : Int, Error {
             return NSLocalizedString("\(OfflineShoppingErrors.self)_\(self)", tableName: String(describing: self), bundle: Bundle.main, value: "Local data access error ", comment: "")
         case .initCoreDataError:
             return NSLocalizedString("\(OfflineShoppingErrors.self)_\(self)", tableName: String(describing: self), bundle: Bundle.main, value: "Init coredata error", comment: "")
+        case .wrongURLFormatForJSONResource:
+            return NSLocalizedString("\(OfflineShoppingErrors.self)_\(self)", tableName: String(describing: self), bundle: Bundle.main, value: "Wrong remote url data", comment: "")
+        case .urlImgNotReachable:
+            return NSLocalizedString("\(OfflineShoppingErrors.self)_\(self)", tableName: String(describing: self), bundle: Bundle.main, value: "Remote image resource not reachable", comment: "")
         }
     }
     

@@ -11,7 +11,9 @@ class FirstExecViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    var context: NSManagedObjectContext?
     var msg = ""
+    var alertProgress: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +31,45 @@ class FirstExecViewController: UIViewController {
 
     //MARK: - Flujo
     func downloadShopsIfNeeded() {
-        showDownloadMessage()
+        let coreDataInteractor = CoreDataInteractor()
+        let shopsInteractor = ShopsInteractor()
         
-        ShopsInteractor().downloadData(completion: {
-            assert(Thread.current == Thread.main)
-            self.activityIndicator.stopAnimating()
-            self.btnWatchShops.isHidden = false
-            self.dismiss(animated: true, completion: nil)
-        }, onError: { (error) in
+        do {
+            if try coreDataInteractor.thereIsDataInLocal(inContext: context!) {
+                self.activityIndicator.stopAnimating()
+            } else {
+                showDownloadMessage()
+                let imgLoadMsg = "Descargando imágenes, por favor no cierre la aplicación.\n"
+                shopsInteractor.downloadData(completion: { shops in
+                    assert(Thread.current == Thread.main)
+                    
+                    self.alertProgress?.message = imgLoadMsg
+                    shopsInteractor.downloadImages(inShops: shops,
+                        completion: { shops in
+                        do {
+                            try coreDataInteractor.saveRemote(shops: shops, inContext: self.context!)
+                            self.activityIndicator.stopAnimating()
+                            self.dismiss(animated: true, completion: nil)
+                            self.btnWatchShops.isHidden = false
+                        } catch {
+                            self.showErrorLoading(error)
+                        }
+
+                    },
+                        advanceWatcher: { advance in
+                            self.alertProgress!.message = imgLoadMsg + "(" + String(format: "%.2f", advance*100) + "%)"
+                            
+                    })
+                }, onError: { (error) in
+                    self.showErrorLoading(error)
+                    
+                })
+            }
+        } catch {
             self.showErrorLoading(error)
-            
-        })
+        }
+        
+        
     }
 
     @IBAction func verTiendas(_ sender: Any) {
@@ -48,7 +78,8 @@ class FirstExecViewController: UIViewController {
 
     //MARK: - Mensajes y fondos
     func showDownloadMessage () {
-        self.present(pushAlertLoading(), animated: true, completion: nil)
+        self.alertProgress = pushAlertLoading()
+        self.present(self.alertProgress!, animated: true, completion: nil)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
         btnWatchShops.isHidden = true
@@ -85,7 +116,6 @@ class FirstExecViewController: UIViewController {
             self.downloadShopsIfNeeded()
         }
         
-
         // Habilitar un botón de cierre de la app... a apple no le gusta
         // let cancelBtn = UIAlertAction(title: "Salir", style: .cancel) { (action) in
         //     abort()

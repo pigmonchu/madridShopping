@@ -22,6 +22,9 @@
 		46E57A311ED4BE97005B24F1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A301ED4BE97005B24F1 /* Errors.swift */; };
 		46E57A331ED4D23F005B24F1 /* Shop+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A321ED4D23F005B24F1 /* Shop+Utils.swift */; };
 		46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */; };
+		46F750331ED77E9400D8A887 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750321ED77E9400D8A887 /* ShopsViewController.swift */; };
+		46F750351ED77F9C00D8A887 /* DetailShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750341ED77F9C00D8A887 /* DetailShopViewController.swift */; };
+		46F750371ED810A000D8A887 /* CoreDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750361ED810A000D8A887 /* CoreDataInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		46E57A301ED4BE97005B24F1 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		46E57A321ED4D23F005B24F1 /* Shop+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shop+Utils.swift"; sourceTree = "<group>"; };
 		46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		46F750321ED77E9400D8A887 /* ShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
+		46F750341ED77F9C00D8A887 /* DetailShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailShopViewController.swift; sourceTree = "<group>"; };
+		46F750361ED810A000D8A887 /* CoreDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				46D156731ED14F63004C6265 /* OfflineShopping.xcdatamodeld */,
-				46E57A301ED4BE97005B24F1 /* Errors.swift */,
 				46E57A321ED4D23F005B24F1 /* Shop+Utils.swift */,
+				46E57A301ED4BE97005B24F1 /* Errors.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -88,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				46D1566E1ED14F63004C6265 /* FirstExecViewController.swift */,
+				46F750321ED77E9400D8A887 /* ShopsViewController.swift */,
+				46F750341ED77F9C00D8A887 /* DetailShopViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				46E57A291ED4AC92005B24F1 /* ShopsInteractor.swift */,
+				46F750361ED810A000D8A887 /* CoreDataInteractor.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -281,11 +290,14 @@
 				46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */,
 				46E57A2C1ED4AD46005B24F1 /* ShopsAPIManager.swift in Sources */,
 				46E57A331ED4D23F005B24F1 /* Shop+Utils.swift in Sources */,
+				46F750351ED77F9C00D8A887 /* DetailShopViewController.swift in Sources */,
 				46E57A2A1ED4AC92005B24F1 /* ShopsInteractor.swift in Sources */,
 				46D156751ED14F63004C6265 /* OfflineShopping.xcdatamodeld in Sources */,
 				46D1566F1ED14F63004C6265 /* FirstExecViewController.swift in Sources */,
 				4619F6241ED2A59E000C9185 /* CoreDataManager.swift in Sources */,
 				46D1566D1ED14F63004C6265 /* AppDelegate.swift in Sources */,
+				46F750371ED810A000D8A887 /* CoreDataInteractor.swift in Sources */,
+				46F750331ED77E9400D8A887 /* ShopsViewController.swift in Sources */,
 				46E57A311ED4BE97005B24F1 /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

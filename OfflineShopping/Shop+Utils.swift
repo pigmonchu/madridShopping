@@ -2,7 +2,7 @@ import CoreData
 
 
 extension Shop {
-    struct data {
+    public struct data {
         let id: Int16
         let address: String
         let description_es: String
@@ -10,7 +10,9 @@ extension Shop {
         let gps_lat: Double
         let gps_lon: Double
         let img_url: String
+        var img: NSData?
         let logo_img_url: String
+        var logo_img: NSData?
         let name: String
         let opening_hours_es: String
         let opening_hours_en: String
@@ -59,6 +61,8 @@ extension Shop {
                   opening_hours_en: data.opening_hours_en,
                   opening_hours_es: data.opening_hours_es,
                   url: data.url)
+        self.img = data.img
+        self.logo_img = data.logo_img
     }
 
     internal func update(data: Shop.data) {
@@ -68,7 +72,9 @@ extension Shop {
         self.gps_lat = data.gps_lat
         self.gps_lon = data.gps_lon
         self.img_url = data.img_url
+        self.img = data.img
         self.logo_img_url = data.logo_img_url
+        self.logo_img = data.logo_img
         self.name = data.name
         self.opening_hours_es = data.opening_hours_es
         self.opening_hours_en = data.opening_hours_en

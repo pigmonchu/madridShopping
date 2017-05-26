@@ -22,7 +22,6 @@ public class ShopsAPIManager{
         
         contextJson = try parse(data: dataJson!)
         
-        //Decodifico los datos transformándolos en Book y guardando en local las images y pdfs si procede
         for dict in contextJson {
             guard let shop = decode(Shop: dict) else {
                 continue
@@ -42,6 +41,18 @@ public class ShopsAPIManager{
             print(mensaje: "Error en acceso a datos en remoto", atError: error)
             return nil
         }
+    }
+    
+    func loadRemoteImg(url: String) throws -> NSData? {
+        guard let imgUrl = URL(string: url) else {
+            throw OfflineShoppingErrors.wrongURLFormatForJSONResource
+        }
+        
+        guard let imgData = try? Data(contentsOf: imgUrl) else {
+            throw OfflineShoppingErrors.urlImgNotReachable
+        }
+        return imgData as NSData
+        
     }
     
     func parse(data: Data) throws -> JSONArray {
@@ -78,7 +89,9 @@ public class ShopsAPIManager{
                              gps_lat: gps_lat,
                              gps_lon: gps_lon,
                              img_url: img_url,
+                             img: nil,
                              logo_img_url: logo_img_url,
+                             logo_img: nil,
                              name: name,
                              opening_hours_es: opening_hours_es,
                              opening_hours_en: opening_hours_en,
