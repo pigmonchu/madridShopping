@@ -51,7 +51,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="b9O-al-dZD" kind="show" id="nSg-ky-ZrG"/>
+                                    <segue destination="b9O-al-dZD" kind="show" identifier="iniAppSegue" id="nSg-ky-ZrG"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-x7-dop">
@@ -128,11 +128,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2yJ-kn-Y5v" id="pNI-xG-THZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="jdl-Ii-C9h" kind="show" identifier="viewShopDetail" id="2He-Hn-IxI"/>
+                                            <segue destination="jdl-Ii-C9h" kind="show" identifier="viewShopDetailSegue" id="2He-Hn-IxI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -141,13 +141,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ysj-kH-1ZU">
-                        <barButtonItem key="rightBarButtonItem" title="Detail" id="2jH-bQ-vDm">
-                            <connections>
-                                <segue destination="jdl-Ii-C9h" kind="show" identifier="viewShopDetail" id="U6E-yj-Ohb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ysj-kH-1ZU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zU-mt-HEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,7 +265,4 @@
         <image name="iconoBlanco" width="292" height="355"/>
         <image name="loadError" width="375" height="400"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="U6E-yj-Ohb"/>
-    </inferredMetricsTieBreakers>
 </document>

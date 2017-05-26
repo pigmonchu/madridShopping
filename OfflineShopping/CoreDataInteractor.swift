@@ -24,6 +24,8 @@ public class CoreDataInteractor {
     public func thereIsDataInLocal(inContext context: NSManagedObjectContext) throws -> Bool {
         cacheRequest.fetchBatchSize = 1
         
+//        throw OfflineShoppingErrors.localDataAccessError
+        
         let result = try context.fetch(cacheRequest)
         return (result.count > 0 && result[0].isDownloaded)
     }

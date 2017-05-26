@@ -74,7 +74,17 @@ class FirstExecViewController: UIViewController {
 
     @IBAction func verTiendas(_ sender: Any) {
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "iniAppSegue" {
+                if let navController = segue.destination as? UINavigationController,
+                    let vc = navController.topViewController as? ShopsViewController {
+                    vc.context = self.context
+                }
+            }
+        }
+    }
 
     //MARK: - Mensajes y fondos
     func showDownloadMessage () {
@@ -94,14 +104,23 @@ class FirstExecViewController: UIViewController {
         if myError != nil && myError == OfflineShoppingErrors.remoteShopsUrlNotReachable {
             self.msg = "La conexión a internet es necesaria para lanzar por primera vez esta aplicación. Reintente cuando disponga de acceso a la red"
         } else {
-            self.msg = "Se ha producido un error en la descarga de datos. Reintente más tarde"
+            self.msg = "Se ha producido un error al iniciar la aplicación."
+        }
+
+        if let modal = self.presentedViewController {
+            self.dismiss(animated: true) {
+                self.showErrorControls(message: self.msg)
+            }
+        } else  {
+            self.showErrorControls(message: self.msg)
         }
         
-        self.dismiss(animated: true) {
-            self.backgroundError.isHidden = false
-            self.imgLoadError.isHidden = false
-            self.present(self.pushAlertError(message: self.msg), animated: true, completion: nil)
-        }
+    }
+    
+    func showErrorControls(message: String) {
+        self.backgroundError.isHidden = false
+        self.imgLoadError.isHidden = false
+        self.present(self.pushAlertError(message: self.msg), animated: true, completion: nil)
     }
     
     internal func pushAlertLoading() -> UIAlertController {
