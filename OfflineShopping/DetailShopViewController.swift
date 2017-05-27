@@ -1,23 +1,46 @@
 import UIKit
+import CoreData
 
 class DetailShopViewController: UIViewController {
 
     @IBOutlet weak var imgShop: UIImageView!
     @IBOutlet weak var imgLogoShop: UIImageView!
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblDescription: UITextView!
     @IBOutlet weak var lblOpeningHours: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
+
     @IBOutlet weak var lblLocalization: UILabel!
+
+    var shop: Shop?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblName.text = "Cortefiel - Preciados"
-        lblOpeningHours.text = "De Lunes a Sábado: 10:00 - 21:00"
-        lblDescription.text = "Una extensa red de tiendas distribuidas por cuatro continentes convierte a Grupo Cortefiel en una de las principales compañías europeas del sector moda. A través de sus cuatro cadenas –Cortefiel, Pedro del Hierro, Springfield y Women’secret-, el Grupo está presente en 58 países con 1.647 puntos de venta."
+        guard let theShop = shop else {
+            return
+        }
         
-        lblLocalization.text = "Puerta del Sol, 11"
+        lblName.text = theShop.name
+        lblOpeningHours.text = theShop.opening_hours_es
+        lblDescription.text = theShop.description_es
+        
+        if let address = theShop.address {
+            lblLocalization.text = " " + address
+        }
+        
+        if let logo = theShop.logo_img {
+            imgLogoShop.image = UIImage(data: logo as Data,scale:1.0)
+            imgLogoShop.layer.cornerRadius = 33
+            imgLogoShop.clipsToBounds = true
+        }
+        
+        if let image = theShop.img {
+            imgShop.image = UIImage(data: image as Data, scale:1.0)
+        }
 
     }
+
+    
 
 
 }

@@ -72,9 +72,6 @@ class FirstExecViewController: UIViewController {
         
     }
 
-    @IBAction func verTiendas(_ sender: Any) {
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "iniAppSegue" {
@@ -107,7 +104,7 @@ class FirstExecViewController: UIViewController {
             self.msg = "Se ha producido un error al iniciar la aplicación."
         }
 
-        if let modal = self.presentedViewController {
+        if self.presentedViewController != nil {
             self.dismiss(animated: true) {
                 self.showErrorControls(message: self.msg)
             }

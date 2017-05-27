@@ -47,7 +47,7 @@ extension Shop {
         self.url = url
     }
 
-    internal convenience init(context: NSManagedObjectContext, data: Shop.data) {
+    public convenience init(context: NSManagedObjectContext, data: Shop.data) {
         self.init(context: context,
                   id: data.id,
                   address: data.address,
@@ -65,7 +65,7 @@ extension Shop {
         self.logo_img = data.logo_img
     }
 
-    internal func update(data: Shop.data) {
+    public func update(data: Shop.data) {
         self.address = data.address
         self.description_es = data.description_es
         self.description_en = data.description_en
@@ -81,6 +81,17 @@ extension Shop {
         self.url = data.url
     }
     
+    
+    class func fetchRequestOrderedById() -> NSFetchRequest<Shop> {
+        let fetchRequest : NSFetchRequest<Shop> = Shop.fetchRequest()
+        fetchRequest.fetchBatchSize = 12
+        
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        return fetchRequest
+    }
     
     
 }
