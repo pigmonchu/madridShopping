@@ -9,6 +9,7 @@ extension Shop {
         let description_en: String
         let gps_lat: Double
         let gps_lon: Double
+        var gps_img: NSData?
         let img_url: String
         var img: NSData?
         let logo_img_url: String
@@ -63,6 +64,7 @@ extension Shop {
                   url: data.url)
         self.img = data.img
         self.logo_img = data.logo_img
+        self.gps_img = data.gps_img
     }
 
     public func update(data: Shop.data) {
@@ -71,6 +73,7 @@ extension Shop {
         self.description_en = data.description_en
         self.gps_lat = data.gps_lat
         self.gps_lon = data.gps_lon
+        self.gps_img = data.gps_img
         self.img_url = data.img_url
         self.img = data.img
         self.logo_img_url = data.logo_img_url

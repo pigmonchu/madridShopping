@@ -5,6 +5,7 @@ class DetailShopViewController: UIViewController {
 
     @IBOutlet weak var imgShop: UIImageView!
     @IBOutlet weak var imgLogoShop: UIImageView!
+    @IBOutlet weak var imgMapLoc: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblDescription: UITextView!
     @IBOutlet weak var lblOpeningHours: UILabel!
@@ -37,10 +38,12 @@ class DetailShopViewController: UIViewController {
         if let image = theShop.img {
             imgShop.image = UIImage(data: image as Data, scale:1.0)
         }
-
+        
+        if let mapImage = theShop.gps_img {
+            imgMapLoc.image = UIImage(data: mapImage as Data, scale:1.0)
+        }
+        
     }
-
-    
 
 
 }

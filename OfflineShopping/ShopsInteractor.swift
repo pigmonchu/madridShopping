@@ -43,6 +43,9 @@ public class ShopsInteractor {
             for var shop in shops {
                 shop.img = self.extractImage(url: shop.img_url)
                 shop.logo_img = self.extractImage(url: shop.logo_img_url)
+                shop.gps_img = self.extractImage(url: self.getURLMap(lat:shop.gps_lat, lon: shop.gps_lon))
+                
+                
                 newShops.append(shop)
                 if advanceWatcher != nil {
                     DispatchQueue.main.sync{
@@ -59,6 +62,10 @@ public class ShopsInteractor {
         }
     }
 
+    func getURLMap(lat: Double, lon: Double) -> String {
+        return "https://maps.googleapis.com/maps/api/staticmap?center=\(lat),\(lon)&zoom=16&scale=1&size=500x255&maptype=roadmap&format=png&visual_refresh=true&markers=icon:http://lepe.digestivethinking.com/means/images/icn_map_position_shop.png%7Cshadow:true%7C\(lat),\(lon)"
+    }
+    
     func extractImage(url: String) -> NSData? {
         var dataImg: NSData?
         do {

@@ -54,7 +54,7 @@ public class ShopsAPIManager{
         return imgData as NSData
         
     }
-    
+        
     func parse(data: Data) throws -> JSONArray {
         do {
             let dict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
@@ -88,6 +88,7 @@ public class ShopsAPIManager{
                              description_en: description_en,
                              gps_lat: gps_lat,
                              gps_lon: gps_lon,
+                             gps_img: nil,
                              img_url: img_url,
                              img: nil,
                              logo_img_url: logo_img_url,

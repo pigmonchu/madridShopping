@@ -227,8 +227,9 @@
                                     <constraint firstAttribute="width" constant="66" id="QLy-Yp-Ujj"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QJr-Eg-Ode">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QJr-Eg-Ode">
                                 <rect key="frame" x="0.0" y="476" width="375" height="191"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QJr-Eg-Ode" secondAttribute="height" multiplier="375:191" id="TbI-5g-Psr"/>
                                 </constraints>
@@ -258,7 +259,7 @@
                                 <color key="textColor" red="0.75440907479999997" green="0.22095301749999999" blue="0.17176088689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="642-e9-GBZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="642-e9-GBZ">
                                 <rect key="frame" x="8" y="318" width="359" height="150"/>
                                 <color key="textColor" red="0.75440907479999997" green="0.22095301749999999" blue="0.17176088689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Light" family="Montserrat Alternates" pointSize="12"/>
@@ -293,6 +294,7 @@
                     </view>
                     <connections>
                         <outlet property="imgLogoShop" destination="bFr-FR-DAu" id="M9z-tw-fsM"/>
+                        <outlet property="imgMapLoc" destination="QJr-Eg-Ode" id="VCe-wI-Zd2"/>
                         <outlet property="imgShop" destination="vfa-aV-p5q" id="O9z-N8-NXD"/>
                         <outlet property="lblDescription" destination="642-e9-GBZ" id="aP6-ZI-HD6"/>
                         <outlet property="lblLocalization" destination="CTB-Yk-mV2" id="YI0-sG-x8s"/>
