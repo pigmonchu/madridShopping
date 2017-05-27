@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         context = container.viewContext
 
         injectToFirstViewController(context: context!)
+        UINavigationBar.appearance().barStyle = .blackOpaque
         return true
     }
 

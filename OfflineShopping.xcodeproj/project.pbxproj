@@ -28,6 +28,7 @@
 		46F750391ED895A200D8A887 /* ShopsViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750381ED895A200D8A887 /* ShopsViewController+UICollectionView.swift */; };
 		46F7503D1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */; };
 		46F7503F1ED9DA7900D8A887 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7503E1ED9DA7900D8A887 /* ShopCell.swift */; };
+		46F750431EDA120E00D8A887 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F750421EDA120E00D8A887 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		46F750381ED895A200D8A887 /* ShopsViewController+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+NSFetchedResultsController.swift"; sourceTree = "<group>"; };
 		46F7503E1ED9DA7900D8A887 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		46F750421EDA120E00D8A887 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F750431EDA120E00D8A887 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +145,7 @@
 				46D1566B1ED14F63004C6265 /* OfflineShopping */,
 				46D156831ED14F64004C6265 /* OfflineShoppingTests */,
 				46D1566A1ED14F63004C6265 /* Products */,
+				46F750411EDA120E00D8A887 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +217,14 @@
 			name = DetailShopViewController;
 			sourceTree = "<group>";
 		};
+		46F750411EDA120E00D8A887 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46F750421EDA120E00D8A887 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,6 +277,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 57S8287KNH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					46D1567F1ED14F64004C6265 = {
 						CreatedOnToolsVersion = 8.3;

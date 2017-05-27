@@ -32,5 +32,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Sirve para localizar las tiendas y centros comerciales más cercanos a su posición.</string>
 </dict>
 </plist>

@@ -15,6 +15,10 @@ class FirstExecViewController: UIViewController {
     var msg = ""
     var alertProgress: UIAlertController?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
