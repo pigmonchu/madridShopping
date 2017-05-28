@@ -2,6 +2,26 @@ import CoreData
 
 
 extension Shop {
+    public var opening_hours: String? {
+        get {
+            if firstPreferredLanguage == "es" {
+                return self.opening_hours_es
+            } else {
+                return self.opening_hours_en
+            }
+        }
+    }
+    
+    public var briefDescription: String? {
+        get {
+            if firstPreferredLanguage == "es" {
+                return self.description_es
+            } else {
+                return self.description_en
+            }
+        }
+    }
+    
     public struct data {
         let id: Int16
         let address: String

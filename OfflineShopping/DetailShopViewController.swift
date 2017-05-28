@@ -22,8 +22,8 @@ class DetailShopViewController: UIViewController {
         }
         
         lblName.text = theShop.name
-        lblOpeningHours.text = theShop.opening_hours_es
-        lblDescription.text = theShop.description_es
+        lblOpeningHours.text = theShop.opening_hours
+        lblDescription.text = theShop.briefDescription
         
         if let address = theShop.address {
             lblLocalization.text = " " + address

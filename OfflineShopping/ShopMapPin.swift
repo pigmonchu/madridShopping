@@ -14,7 +14,7 @@ class ShopMapPin: NSObject, MKAnnotation {
         if let name = shop.name {
             self.title = name
         }
-        if let opening = shop.opening_hours_es {
+        if let opening = shop.opening_hours {
             self.subtitle = opening
         }
         

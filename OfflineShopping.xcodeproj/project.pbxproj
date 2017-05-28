@@ -31,6 +31,7 @@
 		46F750431EDA120E00D8A887 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F750421EDA120E00D8A887 /* MapKit.framework */; };
 		46F750451EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */; };
 		46F750471EDA903C00D8A887 /* ShopMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750461EDA903C00D8A887 /* ShopMapPin.swift */; };
+		46F750491EDB47E500D8A887 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750481EDB47E400D8A887 /* LanguageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		46F750421EDA120E00D8A887 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+CLLocationManager.swift"; sourceTree = "<group>"; };
 		46F750461EDA903C00D8A887 /* ShopMapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapPin.swift; sourceTree = "<group>"; };
+		46F750481EDB47E400D8A887 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				46F7503E1ED9DA7900D8A887 /* ShopCell.swift */,
+				46F750461EDA903C00D8A887 /* ShopMapPin.swift */,
 				46D156701ED14F63004C6265 /* Main.storyboard */,
 				46D156781ED14F63004C6265 /* LaunchScreen.storyboard */,
-				46F750461EDA903C00D8A887 /* ShopMapPin.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 				4619F6231ED2A59E000C9185 /* CoreDataManager.swift */,
 				46E57A2B1ED4AD46005B24F1 /* ShopsAPIManager.swift */,
 				46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */,
+				46F750481EDB47E400D8A887 /* LanguageManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				4619F6241ED2A59E000C9185 /* CoreDataManager.swift in Sources */,
 				46D1566D1ED14F63004C6265 /* AppDelegate.swift in Sources */,
 				46F750371ED810A000D8A887 /* CoreDataInteractor.swift in Sources */,
+				46F750491EDB47E500D8A887 /* LanguageManager.swift in Sources */,
 				46F750331ED77E9400D8A887 /* ShopsViewController.swift in Sources */,
 				46E57A311ED4BE97005B24F1 /* Errors.swift in Sources */,
 			);

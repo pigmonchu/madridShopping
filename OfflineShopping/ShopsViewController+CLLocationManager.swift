@@ -66,7 +66,7 @@ extension ShopsViewController : CLLocationManagerDelegate, MKMapViewDelegate {
 //            [UIColor colorWithRed:0.753 green:0.224 blue:0.169 alpha:1.0]
         subtitleView.numberOfLines = 1
 
-        subtitleView.text = annotation.shop.opening_hours_es
+        subtitleView.text = annotation.shop.opening_hours
         
         annotationView.detailCalloutAccessoryView = subtitleView
 

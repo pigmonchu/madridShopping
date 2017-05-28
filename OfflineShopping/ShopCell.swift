@@ -17,10 +17,10 @@ class ShopCell: UICollectionViewCell {
         
         set {
             _shop = newValue
-            
             ShopNameLabel.text = newValue.name
-            OpeningHoursLabel.text = newValue.opening_hours_es
 
+            OpeningHoursLabel.text = newValue.opening_hours
+            
             if let logo = newValue.logo_img {
                 logoImageView.image = UIImage(data: logo as Data,scale:1.0)
             }

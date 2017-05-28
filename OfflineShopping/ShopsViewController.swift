@@ -7,6 +7,8 @@ class ShopsViewController: UIViewController {
     
     var context: NSManagedObjectContext?
     var _fetchedResultsController: NSFetchedResultsController<Shop>? = nil
+    let pre = NSLocale.preferredLanguages[0]
+    
 
     @IBOutlet weak var mapView: MKMapView!
     let reuseIdentifier = "ShopMapPin"

@@ -9,8 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var context: NSManagedObjectContext?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let pre = NSLocale.preferredLanguages[0]
-
         
         let container = CoreDataManager().persistentContainer(dbName: containerId, onError: { (error) in
             print("Iniatization CoreData Context Error \(error.localizedDescription) \(error.userInfo)")
