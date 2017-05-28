@@ -52,6 +52,22 @@ extension ShopsViewController : CLLocationManagerDelegate, MKMapViewDelegate {
         mapView.setCenter(CLLocationCoordinate2D(latitude: mapAnnotation.shop.gps_lat, longitude: mapAnnotation.shop.gps_lon), animated: true)
     }
     
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+
+        guard let theAnnotation = view.annotation,
+            let shopMapPin = theAnnotation as? ShopMapPin else {
+                return
+        }
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailShopViewController = storyBoard.instantiateViewController(withIdentifier: "detailShopViewController") as! DetailShopViewController
+        detailShopViewController.shop = shopMapPin.shop
+        
+        self.navigationController?.pushViewController(detailShopViewController, animated: true)
+
+    }
+    
     func format(_ annotationView: MKAnnotationView, forAnnotation annotation: MKAnnotation) {
         annotationView.canShowCallout = true
         annotationView.image = UIImage(named: "pinLocation")
@@ -70,8 +86,13 @@ extension ShopsViewController : CLLocationManagerDelegate, MKMapViewDelegate {
         
         annotationView.detailCalloutAccessoryView = subtitleView
 
-        //TODO: Pendiente de dejar la etiqueta como quiero.. Empezar aquí http://sweettutos.com/2016/03/16/how-to-completely-customise-your-map-annotations-callout-views/
+        if let logo = annotation.shop.logo_img_40 {
+            annotationView.leftCalloutAccessoryView = UIImageView(image: UIImage(data: logo as Data,scale:1.0))
+            
+        }
         
+        annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+
         
     }
 }

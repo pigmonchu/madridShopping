@@ -44,10 +44,10 @@
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-hj-83M">
-                                <rect key="frame" x="138" y="551.5" width="99" height="33"/>
+                                <rect key="frame" x="0.0" y="551.5" width="375" height="33"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="17"/>
                                 <color key="tintColor" red="0.948936522" green="0.94907277820000002" blue="0.94890671969999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="ver Tiendas">
+                                <state key="normal" title="watch Shops">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -80,6 +80,7 @@
                             <constraint firstItem="1ae-my-SO3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="3:4" id="8jS-Tn-wan"/>
                             <constraint firstAttribute="trailing" secondItem="1ae-my-SO3" secondAttribute="trailing" constant="-71" id="9Re-1C-TOr"/>
                             <constraint firstItem="flJ-Nf-GsU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="CaU-NV-xkA"/>
+                            <constraint firstItem="VsH-hj-83M" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="DoR-8t-2XB"/>
                             <constraint firstAttribute="trailing" secondItem="flJ-Nf-GsU" secondAttribute="trailing" id="Hmh-ab-xnR"/>
                             <constraint firstItem="1ae-my-SO3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="94" id="P4h-Ip-Fef"/>
                             <constraint firstItem="5ri-x7-dop" firstAttribute="top" secondItem="flJ-Nf-GsU" secondAttribute="bottom" constant="35" id="S3f-rq-0kQ"/>
@@ -229,7 +230,7 @@
         <!--Detail Shop View Controller-->
         <scene sceneID="WMa-91-fww">
             <objects>
-                <viewController id="jdl-Ii-C9h" customClass="DetailShopViewController" customModule="OfflineShopping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailShopViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jdl-Ii-C9h" customClass="DetailShopViewController" customModule="OfflineShopping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ycv-w7-D2d"/>
                         <viewControllerLayoutGuide type="bottom" id="grf-Va-Sen"/>

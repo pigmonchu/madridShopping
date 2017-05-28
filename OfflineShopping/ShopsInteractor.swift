@@ -1,5 +1,6 @@
 import Foundation
 import CoreData
+import UIKit
 
 public class ShopsInteractor {
 
@@ -43,6 +44,13 @@ public class ShopsInteractor {
             for var shop in shops {
                 shop.img = self.extractImage(url: shop.img_url)
                 shop.logo_img = self.extractImage(url: shop.logo_img_url)
+
+                if let logo_img = shop.logo_img {
+                    let logo = UIImage(data: logo_img as Data, scale:1.0)
+                    let logo40 = resizeImageToNSData(image: logo!, maxHeight: 36.0, maxWidth: 36.0)
+                    shop.logo_img_40 = logo40
+                }
+                
                 shop.gps_img = self.extractImage(url: self.getURLMap(lat:shop.gps_lat, lon: shop.gps_lon))
                 
                 

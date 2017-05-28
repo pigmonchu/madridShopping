@@ -32,6 +32,7 @@
 		46F750451EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */; };
 		46F750471EDA903C00D8A887 /* ShopMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750461EDA903C00D8A887 /* ShopMapPin.swift */; };
 		46F750491EDB47E500D8A887 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750481EDB47E400D8A887 /* LanguageManager.swift */; };
+		46F7504B1EDB525D00D8A887 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7504A1EDB525D00D8A887 /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+CLLocationManager.swift"; sourceTree = "<group>"; };
 		46F750461EDA903C00D8A887 /* ShopMapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapPin.swift; sourceTree = "<group>"; };
 		46F750481EDB47E400D8A887 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		46F7504A1EDB525D00D8A887 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				46E57A2B1ED4AD46005B24F1 /* ShopsAPIManager.swift */,
 				46E57A5C1ED6A4C3005B24F1 /* ErrorManager.swift */,
 				46F750481EDB47E400D8A887 /* LanguageManager.swift */,
+				46F7504A1EDB525D00D8A887 /* Tools.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F7504B1EDB525D00D8A887 /* Tools.swift in Sources */,
 				46F750451EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift in Sources */,
 				46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */,
 				46F750391ED895A200D8A887 /* ShopsViewController+UICollectionView.swift in Sources */,

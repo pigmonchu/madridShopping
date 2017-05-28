@@ -34,6 +34,7 @@ extension Shop {
         var img: NSData?
         let logo_img_url: String
         var logo_img: NSData?
+        var logo_img_40: NSData?
         let name: String
         let opening_hours_es: String
         let opening_hours_en: String
@@ -84,6 +85,7 @@ extension Shop {
                   url: data.url)
         self.img = data.img
         self.logo_img = data.logo_img
+        self.logo_img_40 = data.logo_img_40
         self.gps_img = data.gps_img
     }
 
@@ -98,6 +100,7 @@ extension Shop {
         self.img = data.img
         self.logo_img_url = data.logo_img_url
         self.logo_img = data.logo_img
+        self.logo_img_40 = data.logo_img_40
         self.name = data.name
         self.opening_hours_es = data.opening_hours_es
         self.opening_hours_en = data.opening_hours_en

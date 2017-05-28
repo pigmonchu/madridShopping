@@ -93,6 +93,7 @@ public class ShopsAPIManager{
                              img: nil,
                              logo_img_url: logo_img_url,
                              logo_img: nil,
+                             logo_img_40:nil,
                              name: name,
                              opening_hours_es: opening_hours_es,
                              opening_hours_en: opening_hours_en,

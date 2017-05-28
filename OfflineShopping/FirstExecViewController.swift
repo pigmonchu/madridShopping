@@ -21,10 +21,17 @@ class FirstExecViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+ 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        if firstPreferredLanguage == "es" {
+            btnWatchShops.titleLabel!.text = "ver Tiendas"
+        } else {
+            btnWatchShops.titleLabel!.text = "watch Shops"
+        }
+        
         downloadShopsIfNeeded()
     }
     override func didReceiveMemoryWarning() {
@@ -54,7 +61,7 @@ class FirstExecViewController: UIViewController {
                             try coreDataInteractor.saveRemote(shops: shops, inContext: self.context!)
                             self.activityIndicator.stopAnimating()
                             self.dismiss(animated: true, completion: nil)
-                            self.btnWatchShops.isHidden = false
+//                            self.btnWatchShops.isHidden = false
                         } catch {
                             self.showErrorLoading(error)
                         }
@@ -66,7 +73,6 @@ class FirstExecViewController: UIViewController {
                     })
                 }, onError: { (error) in
                     self.showErrorLoading(error)
-                    
                 })
             }
         } catch {
@@ -93,7 +99,7 @@ class FirstExecViewController: UIViewController {
         self.present(self.alertProgress!, animated: true, completion: nil)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
-        btnWatchShops.isHidden = true
+//        btnWatchShops.isHidden = true
         self.imgLoadError.isHidden = true
         self.backgroundError.isHidden = true
     }
