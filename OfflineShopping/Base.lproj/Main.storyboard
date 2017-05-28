@@ -119,19 +119,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K5F-Ny-gKd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K5F-Ny-gKd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pTd-PH-4F1">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pTd-PH-4F1">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pTd-PH-4F1" secondAttribute="height" multiplier="5:4" id="hIZ-b8-Gbe"/>
                                             <constraint firstAttribute="height" constant="300" id="tQj-77-zfG"/>
                                         </constraints>
                                     </mapView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qfM-MY-fOa">
-                                        <rect key="frame" x="0.0" y="300" width="375" height="368"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qfM-MY-fOa">
+                                        <rect key="frame" x="0.0" y="300" width="375" height="367"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="oC7-XG-ANJ">
@@ -199,11 +198,29 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="pTd-PH-4F1" firstAttribute="leading" secondItem="K5F-Ny-gKd" secondAttribute="leading" id="7ai-gV-6fx"/>
+                                    <constraint firstAttribute="trailing" secondItem="pTd-PH-4F1" secondAttribute="trailing" id="Si3-Jh-AxM"/>
+                                    <constraint firstItem="pTd-PH-4F1" firstAttribute="top" secondItem="K5F-Ny-gKd" secondAttribute="top" id="ub8-XP-3iU"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K5F-Ny-gKd" firstAttribute="centerY" secondItem="AU3-eP-1Gv" secondAttribute="centerY" id="7hQ-Em-UEb"/>
+                            <constraint firstItem="K5F-Ny-gKd" firstAttribute="leading" secondItem="AU3-eP-1Gv" secondAttribute="leading" id="8QR-06-Ncg"/>
+                            <constraint firstItem="K5F-Ny-gKd" firstAttribute="height" secondItem="AU3-eP-1Gv" secondAttribute="height" id="AR0-6C-KPe"/>
+                            <constraint firstAttribute="bottom" secondItem="K5F-Ny-gKd" secondAttribute="bottom" id="fe1-v5-6PP"/>
+                            <constraint firstItem="K5F-Ny-gKd" firstAttribute="centerX" secondItem="AU3-eP-1Gv" secondAttribute="centerX" id="iyT-79-bYP"/>
+                            <constraint firstItem="K5F-Ny-gKd" firstAttribute="top" secondItem="AU3-eP-1Gv" secondAttribute="top" id="m0a-Hc-ZX9"/>
+                            <constraint firstItem="K5F-Ny-gKd" firstAttribute="width" secondItem="AU3-eP-1Gv" secondAttribute="width" id="n7J-Vo-8ll"/>
+                            <constraint firstAttribute="trailing" secondItem="K5F-Ny-gKd" secondAttribute="trailing" id="z6A-FJ-L3u"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ysj-kH-1ZU"/>
+                    <connections>
+                        <outlet property="mapView" destination="pTd-PH-4F1" id="YDr-Ar-cog"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zU-mt-HEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

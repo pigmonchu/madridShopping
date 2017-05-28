@@ -29,6 +29,8 @@
 		46F7503D1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */; };
 		46F7503F1ED9DA7900D8A887 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7503E1ED9DA7900D8A887 /* ShopCell.swift */; };
 		46F750431EDA120E00D8A887 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F750421EDA120E00D8A887 /* MapKit.framework */; };
+		46F750451EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */; };
+		46F750471EDA903C00D8A887 /* ShopMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750461EDA903C00D8A887 /* ShopMapPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+NSFetchedResultsController.swift"; sourceTree = "<group>"; };
 		46F7503E1ED9DA7900D8A887 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		46F750421EDA120E00D8A887 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+CLLocationManager.swift"; sourceTree = "<group>"; };
+		46F750461EDA903C00D8A887 /* ShopMapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				46F7503E1ED9DA7900D8A887 /* ShopCell.swift */,
 				46D156701ED14F63004C6265 /* Main.storyboard */,
 				46D156781ED14F63004C6265 /* LaunchScreen.storyboard */,
+				46F750461EDA903C00D8A887 /* ShopMapPin.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				46F750321ED77E9400D8A887 /* ShopsViewController.swift */,
 				46F750381ED895A200D8A887 /* ShopsViewController+UICollectionView.swift */,
 				46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */,
+				46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */,
 			);
 			name = ShopsViewController;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F750451EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift in Sources */,
 				46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */,
 				46F750391ED895A200D8A887 /* ShopsViewController+UICollectionView.swift in Sources */,
 				46E57A2C1ED4AD46005B24F1 /* ShopsAPIManager.swift in Sources */,
@@ -344,6 +351,7 @@
 				46F7503F1ED9DA7900D8A887 /* ShopCell.swift in Sources */,
 				46F7503D1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift in Sources */,
 				46F750351ED77F9C00D8A887 /* DetailShopViewController.swift in Sources */,
+				46F750471EDA903C00D8A887 /* ShopMapPin.swift in Sources */,
 				46E57A2A1ED4AC92005B24F1 /* ShopsInteractor.swift in Sources */,
 				46D156751ED14F63004C6265 /* OfflineShopping.xcdatamodeld in Sources */,
 				46D1566F1ED14F63004C6265 /* FirstExecViewController.swift in Sources */,

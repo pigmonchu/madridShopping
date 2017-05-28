@@ -10,7 +10,7 @@ extension ShopsViewController: NSFetchedResultsControllerDelegate {
         _fetchedResultsController = NSFetchedResultsController(fetchRequest: Shop.fetchRequestOrderedById(),
                                                                managedObjectContext: self.context!,
                                                                sectionNameKeyPath: nil,
-                                                               cacheName: "Master")
+                                                               cacheName: nil) // Recuerda que si cambiara asociarías un caché a cada fetchRequest que quieras guardarte paluego
         
         _fetchedResultsController?.delegate = self
         
