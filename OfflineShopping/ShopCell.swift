@@ -2,13 +2,12 @@
 
 import UIKit
 
-class ShopCell: UICollectionViewCell {
+class ShopCell: UITableViewCell {
     
     @IBOutlet weak var ShopNameLabel: UILabel!
     @IBOutlet weak var OpeningHoursLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var ShopImageView: UIImageView!
-    
     var _shop: Shop?
     var shop: Shop {
         get {

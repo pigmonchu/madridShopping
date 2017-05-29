@@ -25,7 +25,7 @@
 		46F750331ED77E9400D8A887 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750321ED77E9400D8A887 /* ShopsViewController.swift */; };
 		46F750351ED77F9C00D8A887 /* DetailShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750341ED77F9C00D8A887 /* DetailShopViewController.swift */; };
 		46F750371ED810A000D8A887 /* CoreDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750361ED810A000D8A887 /* CoreDataInteractor.swift */; };
-		46F750391ED895A200D8A887 /* ShopsViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750381ED895A200D8A887 /* ShopsViewController+UICollectionView.swift */; };
+		46F750391ED895A200D8A887 /* ShopsViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F750381ED895A200D8A887 /* ShopsViewController+UITableView.swift */; };
 		46F7503D1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */; };
 		46F7503F1ED9DA7900D8A887 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F7503E1ED9DA7900D8A887 /* ShopCell.swift */; };
 		46F750431EDA120E00D8A887 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F750421EDA120E00D8A887 /* MapKit.framework */; };
@@ -68,7 +68,7 @@
 		46F750321ED77E9400D8A887 /* ShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
 		46F750341ED77F9C00D8A887 /* DetailShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailShopViewController.swift; sourceTree = "<group>"; };
 		46F750361ED810A000D8A887 /* CoreDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataInteractor.swift; sourceTree = "<group>"; };
-		46F750381ED895A200D8A887 /* ShopsViewController+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		46F750381ED895A200D8A887 /* ShopsViewController+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+UITableView.swift"; sourceTree = "<group>"; };
 		46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+NSFetchedResultsController.swift"; sourceTree = "<group>"; };
 		46F7503E1ED9DA7900D8A887 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		46F750421EDA120E00D8A887 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -214,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				46F750321ED77E9400D8A887 /* ShopsViewController.swift */,
-				46F750381ED895A200D8A887 /* ShopsViewController+UICollectionView.swift */,
+				46F750381ED895A200D8A887 /* ShopsViewController+UITableView.swift */,
 				46F7503C1ED9CF4700D8A887 /* ShopsViewController+NSFetchedResultsController.swift */,
 				46F750441EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift */,
 			);
@@ -352,7 +352,7 @@
 				46F7504B1EDB525D00D8A887 /* Tools.swift in Sources */,
 				46F750451EDA868000D8A887 /* ShopsViewController+CLLocationManager.swift in Sources */,
 				46E57A5D1ED6A4C3005B24F1 /* ErrorManager.swift in Sources */,
-				46F750391ED895A200D8A887 /* ShopsViewController+UICollectionView.swift in Sources */,
+				46F750391ED895A200D8A887 /* ShopsViewController+UITableView.swift in Sources */,
 				46E57A2C1ED4AD46005B24F1 /* ShopsAPIManager.swift in Sources */,
 				46E57A331ED4D23F005B24F1 /* Shop+Utils.swift in Sources */,
 				46F7503F1ED9DA7900D8A887 /* ShopCell.swift in Sources */,
